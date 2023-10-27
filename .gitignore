@@ -4,3 +4,5 @@ package-lock.json
 node_modules/
 BasicCommand.txt
 package.json
+deploy-commands.js
+.env
