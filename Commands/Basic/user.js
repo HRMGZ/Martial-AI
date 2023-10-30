@@ -2,6 +2,7 @@ const { SlashCommandBuilder } = require('@discordjs/builders');
 
 module.exports = {
     data: new SlashCommandBuilder()
+        .setCooldown(10)
         .setName('user')
         .setDescription('Provides information about the user.'),
     async execute(interaction) {

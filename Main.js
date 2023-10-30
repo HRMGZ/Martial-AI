@@ -21,7 +21,10 @@ const client = new Client({
 client.once('ready', () => {
 	console.log("May your path be blessed with good fortune.");
 });
+//Create a collection for cooldowns
+client.cooldowns = new Collection();
 
+//Create a collection for the commands
 client.commands = new Collection();
 const foldersPath = path.join(__dirname, 'commands');
 const commandFolders = fs.readdirSync(foldersPath);
@@ -64,6 +67,7 @@ client.on(Events.InteractionCreate, async interaction => {
 	}
 });
 
+//Old error handler, have to update it to the new one
 client.on('error', error => {
     console.error('An error occurred:', error);
 });
