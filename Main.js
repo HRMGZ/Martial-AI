@@ -16,11 +16,10 @@ const client = new Client({
 	],
 });
 
+//Create a Cooldown collection
+client.cooldowns = new Collection();
 
-//Ready message when bot is online (node Main.js)
-client.once('ready', () => {
-	console.log("May your path be blessed with good fortune.");
-});
+
 //Create a collection for cooldowns
 client.cooldowns = new Collection();
 
@@ -70,6 +69,11 @@ client.on(Events.InteractionCreate, async interaction => {
 //Old error handler, have to update it to the new one
 client.on('error', error => {
     console.error('An error occurred:', error);
+});
+
+//Ready message when bot is online (node Main.js)
+client.once('ready', () => {
+	console.log("May your path be blessed with good fortune.");
 });
 
 client.login(token);
